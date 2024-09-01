@@ -1,5 +1,3 @@
-# Image Processing System
-
 **Image Processing System** is a Flask-based web application designed to handle image processing tasks asynchronously using Celery and Redis. The system allows users to upload CSV files containing product information and image URLs, processes the images, and stores the results in a PostgreSQL database.
 
 ## **Project Structure**
@@ -50,21 +48,21 @@ image-processing-system/
 
 1. **Clone the repository:**
 
-   ``` 
+   ```bash
    git clone https://github.com/YourUsername/image-processing-system.git
    cd image-processing-system
    ```
 
 2. **Create and activate a virtual environment:**
 
-   ``` 
+   ```bash
    python -m venv .venv
    source .venv/bin/activate  # On Windows use `.venv\Scripts\activate`
    ```
 
 3. **Install dependencies:**
 
-   ``` 
+   ```bash
    pip install -r requirements.txt
    ```
 
@@ -84,20 +82,20 @@ image-processing-system/
 
 5. **Run migrations to create database tables:**
 
-   ``` 
+   ```bash
    flask db upgrade
    ```
 
 6. **Start Redis and Celery:**
 
-   ``` 
+   ```bash
    redis-server  # Start Redis
    celery -A app.celery worker --loglevel=info  # Start Celery worker
    ```
 
 7. **Run the Flask app:**
 
-   ``` 
+   ```bash
    flask run
    ```
 
@@ -109,11 +107,19 @@ image-processing-system/
 
 ## **Example CSV Format**
 
-csv
+```csv
 Serial Number,Product Name,Input Image Urls
 12345,Product A,http://example.com/image1.jpg,http://example.com/image2.jpg
 67890,Product B,http://example.com/image3.jpg
+```
 
+## **Testing**
+
+To run the unit tests:
+
+```bash
+pytest
+```
 
 ## **License**
 
@@ -132,5 +138,3 @@ Contributions are welcome! Please open an issue or submit a pull request for any
 ```
 
 You can copy and paste this formatted text directly into your GitHub repository’s `README.md` file.
-
-This README provides a basic overview of the project, installation steps, usage instructions, and more.
